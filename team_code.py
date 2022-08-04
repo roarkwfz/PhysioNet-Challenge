@@ -211,7 +211,7 @@ def get_features(data, recordings):
                     recording_features[j, 2] = np.var(recordings[i])
                     recording_features[j, 3] = sp.stats.skew(recordings[i])
     recording_features = recording_features.flatten()
-
-    features = np.hstack(([age], sex_features, [height], [weight], [is_pregnant], recording_features))
+    features = np.hstack(([age], sex_features, [height], [weight], [is_pregnant]))
+    #features = np.hstack(([age], sex_features, [height], [weight], [is_pregnant], recording_features))
 
     return np.asarray(features, dtype=np.float32)
